@@ -1,0 +1,2 @@
+bash <(curl -Ls https://raw.githubusercontent.com/DaDe287/AutoRemnaWave/main/setup-firewall.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/DaDe287/AutoRemnaWave/main/setup-panel.sh)
