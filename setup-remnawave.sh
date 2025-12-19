@@ -20,12 +20,12 @@ docker compose up -d && docker compose logs -f -t
 # Reverse proxy setup
 sudo apt-get install cron socat
 
-curl https://get.acme.sh | sh -s email=EMAIL && source ~/.bashrc
-
-mkdir -p /opt/remnawave/nginx && cd /opt/remnawave/nginx
-
 echo "Enter the domen for panel: "
 read panel_domen
+
+curl https://get.acme.sh | sh -s email=webmaster@"$panel_domen" && source ~/.bashrc
+
+mkdir -p /opt/remnawave/nginx && cd /opt/remnawave/nginx
 
 # SSL/TLS request
 acme.sh --issue --standalone -d $"panel_domen" --key-file /opt/remnawave/nginx/privkey.key --fullchain-file /opt/remnawave/nginx/fullchain.pem --alpn --tlsport 8443
